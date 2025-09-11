@@ -1,144 +1,152 @@
-/* Сброс стилей */
+/* Сброс браузерных стилей */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5;
-  color: #F5F5F5; /* светлый текст */
-  background-color: #1A1A1A; /* тёмный фон */
+/* Глобальные переменные */
+:root {
+  --main-bg-gradient: linear-gradient(180deg, #3e329a, #171e37);
+  --text-color: #ffffffde;
+  --accent-color: #ffb947;
+  --accent-color-hover: #dfa13e;
+  --box-bg: #1f2329;
+  --box-bg-light: #2c3137;
+  --border-radius: 12px;
+  --font-family-main: 'Geologica', sans-serif;
 }
 
+/* Основные стили */
+body {
+  font-family: var(--font-family-main);
+  background: var(--main-bg-gradient);
+  color: var(--text-color);
+  min-height: 100vh;
+  min-width: 320px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Логотип */
 .header {
   text-align: center;
   padding: 20px 0;
 }
-
 .logo {
   font-size: 2rem;
-  font-weight: bold;
-  color: #FFD700;
+  font-weight: 700;
+  color: var(--accent-color);
 }
 
+/* Герой-блок */
 .hero {
   text-align: center;
   padding: 60px 20px;
 }
-
 .hero h1 {
-  font-size: 2.5rem;
-  color: #FFFFFF;
-  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
-
 .hero p {
   font-size: 1.2rem;
-  color: #CCCCCC;
+  color: #ffffffb3;
 }
 
+/* CTA-кнопка */
 .cta {
   text-align: center;
   margin: 40px 0;
 }
-
 .btn-primary {
   padding: 15px 30px;
-  background-color: #FFD700;
+  background-color: var(--accent-color);
   color: #1A1A1A;
   text-decoration: none;
   font-size: 1.2rem;
-  border-radius: 5px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
 }
-
 .btn-primary:hover {
-  background-color: #E6C200;
+  background-color: var(--accent-color-hover);
 }
 
+/* Преимущества */
 .features {
-  background-color: #2E2E2E;
+  background-color: var(--box-bg);
   padding: 50px 20px;
 }
-
 .features h2 {
   text-align: center;
   font-size: 2rem;
-  color: #FFFFFF;
   margin-bottom: 40px;
 }
-
 .feature-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
-
 .feature-item {
-  background-color: #3F3F3F;
+  background-color: var(--box-bg-light);
   padding: 20px;
-  border-radius: 8px;
-  width: 250px;
+  border-radius: var(--border-radius);
+  width: 260px;
   text-align: center;
+  transition: transform 0.2s ease;
 }
-
+.feature-item:hover {
+  transform: translateY(-5px);
+}
 .feature-item h3 {
-  color: #FFD700;
+  color: var(--accent-color);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
-
 .feature-item p {
-  color: #DDDDDD;
+  color: #cccccc;
 }
 
+/* Бонусная программа */
 .bonus {
   text-align: center;
   padding: 60px 20px;
 }
-
 .bonus h2 {
   font-size: 2rem;
-  color: #FFFFFF;
   margin-bottom: 20px;
 }
-
 .bonus p {
   font-size: 1.2rem;
-  color: #CCCCCC;
   margin-bottom: 30px;
 }
-
 .highlight {
-  color: #FFD700;
+  color: var(--accent-color);
 }
-
 .btn-secondary {
   padding: 12px 25px;
   background-color: transparent;
-  color: #FFD700;
-  border: 2px solid #FFD700;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
   text-decoration: none;
   font-size: 1.1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
 }
-
 .btn-secondary:hover {
-  background-color: #FFD700;
+  background-color: var(--accent-color);
   color: #1A1A1A;
 }
 
+/* Футер */
 .footer {
   text-align: center;
   padding: 30px 0;
-  background-color: #1A1A1A;
-  color: #777777;
+  background-color: #171e37;
+  color: #888;
 }
-
 .footer p {
   font-size: 0.9rem;
 }
@@ -150,15 +158,10 @@ body {
   }
   .feature-list {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
   }
   .feature-item {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  .btn-primary, .btn-secondary {
-    font-size: 1rem;
-    padding: 12px 20px;
+    max-width: 320px;
   }
 }
