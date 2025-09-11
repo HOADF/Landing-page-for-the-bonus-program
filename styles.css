@@ -1,4 +1,4 @@
-/* Сброс некоторых браузерных стилей */
+/* Сброс стилей */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +8,8 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.5;
-  color: #F5F5F5; /* светлый текст на тёмном фоне */
-  background-color: #1A1A1A; /* тёмный фон, близкий по стилю к Kupikod бонусной странице */
+  color: #F5F5F5; /* светлый текст */
+  background-color: #1A1A1A; /* тёмный фон */
 }
 
 .header {
@@ -20,7 +20,7 @@ body {
 .logo {
   font-size: 2rem;
   font-weight: bold;
-  color: #FFD700; /* яркий золотистый / желтый акцент */
+  color: #FFD700;
 }
 
 .hero {
@@ -46,8 +46,8 @@ body {
 
 .btn-primary {
   padding: 15px 30px;
-  background-color: #FFD700; /* акцентный жёлтый/золотой */
-  color: #1A1A1A; /* тёмный текст на ярком фоне */
+  background-color: #FFD700;
+  color: #1A1A1A;
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 5px;
@@ -141,4 +141,24 @@ body {
 
 .footer p {
   font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .feature-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .feature-item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .btn-primary, .btn-secondary {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
 }
