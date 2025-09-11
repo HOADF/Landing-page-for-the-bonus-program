@@ -1,92 +1,127 @@
-/* styles.css */
-/* Сброс стилей по умолчанию */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Основные стили */
-body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+body {
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
-/* Шапка с логотипом */
-.header {
-    padding: 20px 0;
-    text-align: center;
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #0a2e15 0%, #1a5c2c 100%);
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(40px);
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, #0a2e15, #2e8b57);
+    top: -200px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(45deg, #1a5c2c, #3cb371);
+    bottom: -300px;
+    right: -200px;
+}
+
+.shape-3 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #2e8b57, #3cb371);
+    top: 50%;
+    left: 60%;
+}
+
+header {
+    padding: 20px 40px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #2c3e50;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 128, 0.5);
 }
 
-/* Герой блок */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
 .hero {
     text-align: center;
-    padding: 60px 0;
-    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 60px 20px;
 }
 
-.hero-title {
-    font-size: 2.5rem;
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.hero-description {
+.emoji {
+    font-size: 2.5rem;
+}
+
+.hero p {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Блок с призывом к действию */
-.cta-section {
-    text-align: center;
-    padding: 40px 0;
     margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-.cta-button {
+.btn {
     display: inline-block;
-    padding: 15px 40px;
-    background-color: #e67e22;
+    background: linear-gradient(45deg, #3cb371, #2e8b57);
     color: white;
-    text-decoration: none;
+    padding: 15px 40px;
     border-radius: 30px;
-    font-size: 1.2rem;
+    text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button:hover {
-    background-color: #d35400;
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Блок преимуществ */
 .advantages {
-    padding: 40px 0;
-    margin-bottom: 30px;
+    padding: 40px 20px;
 }
 
-.section-title {
+.advantages h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 }
 
 .advantages-grid {
@@ -96,101 +131,116 @@ body {
 }
 
 .advantage-item {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .advantage-item:hover {
     transform: translateY(-5px);
 }
 
+.advantage-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
 .advantage-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #2c3e50;
 }
 
-/* Блок с кэшбэком */
-.cashback {
+.advantage-item p {
+    opacity: 0.8;
+}
+
+.bonus-program {
     text-align: center;
-    padding: 50px 0;
-    background-color: #2c3e50;
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.cashback .section-title {
-    color: white;
+.bonus-program h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.details-button {
+.bonus-program p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.btn-outline {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #3cb371;
+    background: transparent;
+    padding: 15px 40px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #3cb371;
+    margin-top: 20px;
 }
 
-.details-button:hover {
-    background-color: white;
-    color: #2c3e50;
+.btn-outline:hover {
+    background: rgba(60, 179, 113, 0.1);
+    transform: translateY(-3px);
 }
 
-/* Футер */
-.footer {
+footer {
     text-align: center;
-    padding: 20px 0;
-    color: #7f8c8d;
+    padding: 30px;
+    opacity: 0.7;
 }
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-description {
-        font-size: 1rem;
+    .hero h1 {
+        font-size: 2.2rem;
     }
     
     .advantages-grid {
         grid-template-columns: 1fr;
     }
     
-    .cta-button {
+    .advantage-item {
+        padding: 20px;
+    }
+    
+    .shape-1, .shape-2, .shape-3 {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p, .bonus-program p {
+        font-size: 1rem;
+    }
+    
+    .btn, .btn-outline {
         padding: 12px 30px;
         font-size: 1rem;
     }
-}
-
-/* Кроссбраузерные стили для кнопок */
-button, .cta-button, .details-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Поддержка старых браузеров */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    .advantages-grid {
-        display: flex;
-        flex-wrap: wrap;
+    
+    header {
+        padding: 15px 20px;
     }
     
-    .advantage-item {
-        flex: 1 0 45%;
-        margin: 10px;
+    .logo {
+        font-size: 20px;
     }
 }
